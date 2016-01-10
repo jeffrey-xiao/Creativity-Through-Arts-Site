@@ -1,6 +1,10 @@
 EventDescriptions = new Mongo.Collection('eventdescriptions');
 TeamMembers = new Mongo.Collection('teammembers');
 
+TeamMembers.insert({teammemberName: "Jeffrey Xiao", 
+                    teammemberImg: "/media/team/jeffrey.jpg",
+                    teammemberModal: "jeffrey"
+                   });
 
 
 
