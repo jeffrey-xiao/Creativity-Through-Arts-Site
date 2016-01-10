@@ -253,34 +253,63 @@ color:orange;
 
 .spacer{
 	padding: 40px 0px 0px 0px;
-  margin-top:40px;
-  margin-bottom: 0px;
-
+    margin-top:40px;
+    margin-bottom: 0px;
 }
 
 
 @media screen and (max-width: 699px){
 	#performerMain{
-	background-color: #F5F5F5;
-	text-align: center;
-	}
-  .mainpageIcon{
-    padding-top: 20px;
-  }
-  .introuctionText{
-  text-align: center;
-}
-
+	   background-color: #F5F5F5;
+	   text-align: center;
+    }
+    .mainpageIcon{
+        padding-top: 20px;
+    }
+    .introuctionText{
+        text-align: center;
+    }
 }
 
 @media screen and (min-width: 700px){
 	#performerMain{
-	background-color: #F5F5F5;
-	text-align: right;
+	   background-color: #F5F5F5;
+	   text-align: right;
+    }
+    .introuctionText{
+        text-align: left;
+    }
 }
-.introuctionText{
-  text-align: left;
+
+@media (max-width: 600px) {
+    div div #events {
+        -moz-column-count:    1;
+        -webkit-column-count: 1;
+        column-count:         1;
+    }
 }
+
+@media (max-width: 1000px) {
+    div #events {
+        -moz-column-count:    2;
+        -webkit-column-count: 2;
+        column-count:         2;
+    }
+}
+#events {
+    -webkit-column-count: 3;
+    -webkit-column-gap:   20px;
+    -moz-column-count:    3;
+    -moz-column-gap:      20px;
+    column-count:         3;
+    column-gap:           20px;  
+}
+
+.eventContainer {
+    -webkit-column-break-inside: avoid; /* Chrome, Safari */
+    page-break-inside: avoid;           /* Theoretically FF 20+ */
+    break-inside: avoid-column;         /* IE 11 */
+    display:table;                      /* Actually FF 20+ */
 }
 
 
@@ -298,11 +327,6 @@ color:orange;
   background-color: #FF6F1A;
   border-color: #FF6F1A;
 }
-
-
-
-
-
 
 /*SPLASH PAGE CSS */
 
@@ -441,8 +465,8 @@ color:orange;
   background-image: url('/media/eventspageHeader.jpg');
   background-size:cover;
   height: 75vh;
-
 }
+
 /* CTC PAGE CSS CODE */
 
 .morning{

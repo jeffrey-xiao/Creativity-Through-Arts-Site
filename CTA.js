@@ -9,50 +9,38 @@ TeamMembers.insert({teammemberName: "Jeffrey Xiao",
 
 
 if (Meteor.isClient) {
-Meteor.subscribe("teammembers");
-Template.homePage.rendered = new WOW().init()
+    Meteor.subscribe("teammembers");
+    Template.homePage.rendered = new WOW().init()
 
-Template.eventsPanel.helpers({
-eventdescriptions: function(){
-  return EventDescriptions.find()
-},
-eventCount:function(){
-	return EventDescriptions.find().count();
-},
-eventOccur:function(){
-	if(EventDescriptions.find().count() > 0){
-		return true;
-	}
-}
+    Template.eventsPanel.helpers({
+        eventdescriptions: function(){
+            return EventDescriptions.find()
+        },
+        eventCount:function(){
+	       return EventDescriptions.find().count();
+        },
+        eventOccur:function(){
+	       if(EventDescriptions.find().count() > 0){
+		      return true;
+           }
+        }
+    });
 
+    Template.teamPanel.helpers({
+        teammembers:function(){
+            return TeamMembers.find()
+        }
+    });
 
-});
-Template.teamPanel.helpers({
-
-teammembers:function(){
-  return TeamMembers.find()
-}
-
-
-});
-
-Template.teamPopup.helpers({
-
-teammembers:function(){
-  return TeamMembers.find()
-}
-
-
-});
-
-
-
-
-
+    Template.teamPopup.helpers({
+        teammembers:function(){
+            return TeamMembers.find()
+        }
+    });   
 }
 
 if (Meteor.isServer) {
-Meteor.publish('teammembers', function() {
-    return TeamMembers.find();
-});
+    Meteor.publish('teammembers', function() {
+        return TeamMembers.find();
+    });
 }
